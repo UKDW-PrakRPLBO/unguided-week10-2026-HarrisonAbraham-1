@@ -1,15 +1,36 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
+<?import javafx.geometry.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
 
 <!--Buatlah Semirip mungkin, bebas asalkan jalan-->
 
-<AnchorPane xmlns="http://javafx.com/javafx"
-            xmlns:fx="http://javafx.com/fxml"
-            fx:controller="org.rplbo.app.ug8.Controller.LoginController"
-            prefHeight="400.0" prefWidth="600.0">
+<AnchorPane prefHeight="446.0" prefWidth="518.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.rplbo.app.ug8.Controller.LoginController">
+    <children>
+        <Label contentDisplay="CENTER" layoutX="142.0" layoutY="106.0" prefHeight="17.0" prefWidth="341.0" text="UMBRELLA SECURE TERMINAL">
+            <font>
+                <Font name="System Bold" size="18.0" />
+            </font></Label>
+        <VBox layoutX="55.0" layoutY="158.0" prefHeight="200.0" prefWidth="406.0">
+            <children>
+                <Label prefHeight="20.0" prefWidth="267.0" text="OPERATIVE ID:">
+                    <font>
+                        <Font size="14.0" />
+                    </font></Label>
+                <TextField fx:id="txtUsername">
+                    <VBox.margin>
+                        <Insets bottom="15.0" top="5.0" />
+                    </VBox.margin></TextField>
+                <Label text="PASSCODE:" />
+                <PasswordField fx:id="txtPassword">
+                    <VBox.margin>
+                        <Insets bottom="15.0" top="5.0" />
+                    </VBox.margin>
+                </PasswordField>
+                <Button fx:id="LOGIN" mnemonicParsing="false" onAction="#handleLogin" prefHeight="25.0" prefWidth="404.0" text="AUNTEHETICATE" textAlignment="CENTER" />
+            <Label fx:id="lblStatus" />
+            </children></VBox>
+    </children>
 </AnchorPane>
