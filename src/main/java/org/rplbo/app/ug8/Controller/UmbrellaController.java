@@ -81,13 +81,13 @@ public class UmbrellaController implements Initializable {
         if (selectedItem != null) {
             int Initial = Integer.parseInt(txtInitial.getText());
             int Supply = Integer.parseInt(txtSupply.getText());
-            int stock = Initial - Supply;
+            int finalStock = Initial + Supply;
 
             InventoryItem updated = new InventoryItem(
                     selectedItem.getItemName(),
                     Initial,
                     Supply,
-                    stock
+                    finalStock
             );
 
             if (db.updateItem(updated)) {
@@ -104,9 +104,9 @@ public class UmbrellaController implements Initializable {
         String name = txtItem.getText();
         int Initial = Integer.parseInt(txtInitial.getText());
         int Supply = Integer.parseInt(txtSupply.getText());
-        int stock = Initial - Supply;
+        int finalStock = Initial + Supply;
 
-        InventoryItem newItem = new InventoryItem(name, Initial, Supply, stock);
+        InventoryItem newItem = new InventoryItem(name, Initial, Supply, finalStock);
         db.addItem(newItem);
         refreshTable();
 
